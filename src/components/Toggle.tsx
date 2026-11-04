@@ -7,7 +7,7 @@ export interface ToggleProps {
   onChange: (checked: boolean) => void;
   description?: ReactNode;
   disabled?: boolean;
-  /** id of the region this switch shows or hides. */
+  /** id of the region this switch shows; referenced only while it is rendered (checked). */
   controls?: string;
 }
 
@@ -31,7 +31,7 @@ export function Toggle({ label, checked, onChange, description, disabled, contro
         aria-checked={checked}
         aria-labelledby={`${id}-label`}
         aria-describedby={description ? `${id}-desc` : undefined}
-        aria-controls={controls}
+        aria-controls={checked ? controls : undefined}
         disabled={disabled}
         onClick={() => onChange(!checked)}
         className={cn(
