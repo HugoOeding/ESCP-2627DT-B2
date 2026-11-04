@@ -21,7 +21,7 @@ const variants: Record<ButtonVariant, string> = {
 
 export function buttonClasses({ variant = 'primary', size = 'md', fullWidth }: StyleProps): string {
   return cn(
-    'press inline-flex items-center justify-center gap-2 rounded-md font-semibold no-underline',
+    'press inline-flex max-w-full items-center justify-center gap-2 rounded-md text-center font-semibold no-underline',
     'disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:cursor-not-allowed aria-disabled:opacity-50',
     size === 'md' ? 'min-h-12 px-5 text-body' : 'min-h-11 px-4 text-label',
     variants[variant],

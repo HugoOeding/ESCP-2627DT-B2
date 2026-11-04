@@ -38,12 +38,12 @@ export function SubscriptionCard({ subscription: sub, priceChange, sharedStatus,
     >
       <ServiceIcon name={sub.name} category={sub.category} />
       <span className="min-w-0 flex-1">
-        <span className="flex items-start justify-between gap-2">
+        <span className="flex flex-wrap items-start justify-between gap-x-2 gap-y-1">
           <span className={cn('min-w-0 break-words text-heading', cancelled ? 'text-text-muted' : 'text-text')}>
             {sub.name}
           </span>
           {countdown && (
-            <span className="shrink-0">
+            <span className="max-w-full">
               <CountdownBadge date={countdown.date} label={t(countdownLabel[countdown.kind])} today={todayISO} />
             </span>
           )}

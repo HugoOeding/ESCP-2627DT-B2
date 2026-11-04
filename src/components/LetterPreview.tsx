@@ -1,3 +1,4 @@
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { Copy, Download, Info, Mail, Printer } from 'lucide-react';
 import type { Language } from '../types';
@@ -43,8 +44,14 @@ export function LetterPreview({
           </span>
         </p>
       )}
+      {/* Print-only copy as a direct child of <body>, so print CSS can hide everything else. */}
+      {createPortal(
+        <div data-print-root lang={language} className="hidden whitespace-pre-wrap">
+          {letterText}
+        </div>,
+        document.body,
+      )}
       <div
-        data-print-root
         lang={language}
         aria-label={t('letter.preview')}
         role="document"

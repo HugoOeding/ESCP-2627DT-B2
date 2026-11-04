@@ -3,6 +3,7 @@ import type { Decorator, Preview } from '@storybook/react';
 import { withThemeByClassName } from '@storybook/addon-themes';
 import { MemoryRouter } from 'react-router-dom';
 import { resetStore, seedState } from '../src/store/useStore';
+import { routerFuture } from '../src/routerFuture';
 import '../src/index.css';
 
 /** Every story starts from Lena's seed data inside a router, in a 390 px wide column. */
@@ -11,7 +12,7 @@ const withAppContext: Decorator = (Story, context) => {
   const route = (context.parameters.route as string | undefined) ?? '/';
   return createElement(
     MemoryRouter,
-    { initialEntries: [route] },
+    { initialEntries: [route], future: routerFuture },
     createElement('div', { className: 'mx-auto w-full max-w-[390px] bg-bg p-4 text-text' }, createElement(Story)),
   );
 };

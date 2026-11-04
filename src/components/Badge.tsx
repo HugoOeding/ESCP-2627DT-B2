@@ -25,13 +25,13 @@ export function Badge({ tone = 'neutral', icon: Icon, children, className }: Bad
   return (
     <span
       className={cn(
-        'inline-flex max-w-full items-center gap-1 whitespace-nowrap rounded-sm px-2 py-0.5 text-label tabular-nums',
+        'inline-flex max-w-full items-center gap-1 rounded-sm px-2 py-0.5 text-label tabular-nums',
         tones[tone],
         className,
       )}
     >
       {Icon && <Icon {...ICON_SM} className="shrink-0" />}
-      <span className="truncate">{children}</span>
+      <span className="min-w-0 break-words">{children}</span>
     </span>
   );
 }

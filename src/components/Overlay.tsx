@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useId, useRef, useState, type ReactNode, type RefObject } from 'react';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { useT } from '../store/selectors';
@@ -10,13 +10,15 @@ export interface OverlayProps {
   onClose: () => void;
   children: ReactNode;
   footer?: ReactNode;
+  /** Element to focus when the sheet opens; defaults to the first focusable element. */
+  initialFocusRef?: RefObject<HTMLElement>;
 }
 
 const FOCUSABLE =
   'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 /** Bottom sheet: traps focus, closes on Esc and backdrop, returns focus, locks body scroll. */
-export function Overlay({ title, open, onClose, children, footer }: OverlayProps) {
+export function Overlay({ title, open, onClose, children, footer, initialFocusRef }: OverlayProps) {
   const t = useT();
   const titleId = useId();
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -46,7 +48,7 @@ export function Overlay({ title, open, onClose, children, footer }: OverlayProps
     const { overflow } = document.body.style;
     document.body.style.overflow = 'hidden';
     const dialog = dialogRef.current;
-    const first = dialog?.querySelector<HTMLElement>(FOCUSABLE);
+    const first = initialFocusRef?.current ?? dialog?.querySelector<HTMLElement>(FOCUSABLE);
     (first ?? dialog)?.focus();
 
     const onKeyDown = (e: KeyboardEvent) => {
@@ -77,6 +79,7 @@ export function Overlay({ title, open, onClose, children, footer }: OverlayProps
       document.body.style.overflow = overflow;
       if (previous && document.contains(previous)) previous.focus();
     };
+    // Focus is placed only when the sheet opens; initialFocusRef is a stable ref object.
   }, [open]);
 
   if (!open) return null;
