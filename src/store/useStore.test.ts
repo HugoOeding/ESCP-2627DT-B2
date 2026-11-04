@@ -164,6 +164,14 @@ describe('store', () => {
     expect(get().subscriptions).toHaveLength(9);
     expect(emptyState().onboarded).toBe(false);
   });
+
+  it('stays on the Welcome state when nothing is stored', async () => {
+    resetStore(emptyState());
+    localStorage.removeItem(STORE_KEY);
+    await useStore.persist.rehydrate();
+    expect(get().onboarded).toBe(false);
+    expect(get().subscriptions).toEqual([]);
+  });
 });
 
 describe('selectors', () => {

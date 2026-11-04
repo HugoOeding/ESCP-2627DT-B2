@@ -282,6 +282,8 @@ export const useStore = create<StoreState>()(
       partialize: (state) => pickPersisted(state),
       migrate: (persisted) => (isPersistedShape(persisted) ? persisted : seedState()) as unknown as StoreState,
       merge: (persisted, current) => {
+        // Nothing stored yet (first launch): keep the initial state, which shows Welcome.
+        if (persisted === undefined || persisted === null) return current;
         const base = isPersistedShape(persisted) ? persisted : seedState();
         return {
           ...current,
