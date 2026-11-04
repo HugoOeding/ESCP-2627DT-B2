@@ -8,6 +8,8 @@ import {
   filterByMember,
   hasBudget,
   isCounted,
+  latestPriceChange,
+  priceHistory,
   monthlyEquivalent,
   savedPerMonth,
   sharedStatus,
@@ -101,5 +103,21 @@ describe('shared plans', () => {
     const shares = equalSplit(13.99, 3);
     expect(splitRemainder(13.99, shares)).toBe(0);
     expect(splitRemainder(13.99, [5, 5])).toBe(3.99);
+  });
+});
+
+describe('priceHistory', () => {
+  it('builds points from the price changes', () => {
+    const tune = sub('TuneBox');
+    expect(priceHistory(tune, seedData.priceChanges)).toEqual([
+      { date: '2024-09-05', price: 9.99 },
+      { date: '2025-09-05', price: 10.99 },
+      { date: '2026-11-01', price: 11.99 },
+    ]);
+    expect(latestPriceChange(tune.id, seedData.priceChanges)?.newPrice).toBe(11.99);
+    expect(priceHistory(sub('FitZone'), seedData.priceChanges)).toEqual([{ date: '2025-03-01', price: 39.9 }]);
+    expect(latestPriceChange('sub-4', seedData.priceChanges)).toBeUndefined();
+    const early = [{ id: 'x', subscriptionId: tune.id, oldPrice: 8, newPrice: 9, date: '2024-01-01' }];
+    expect(priceHistory(tune, early)[0]).toEqual({ date: '2024-01-01', price: 8 });
   });
 });

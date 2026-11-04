@@ -1,4 +1,4 @@
-import type { Budget, BudgetState, Category, SharedPlan, SubStatus, Subscription, Totals } from '../types';
+import type { Budget, BudgetState, Category, PriceChange, SharedPlan, SubStatus, Subscription, Totals } from '../types';
 
 export const DEFAULT_MEMBER_ID = 'me';
 
@@ -122,4 +122,22 @@ export function equalSplit(price: number, n: number): number[] {
 /** Difference between the price and the sum of custom shares (positive = still to assign). */
 export function splitRemainder(price: number, shares: number[]): number {
   return round2(price - shares.reduce((a, b) => a + b, 0));
+}
+
+export interface PricePoint {
+  date: string;
+  price: number;
+}
+
+/** Price history from the recorded changes: the original price at the start, then each new price. */
+export function priceHistory(sub: Subscription, changes: PriceChange[]): PricePoint[] {
+  const own = changes.filter((c) => c.subscriptionId === sub.id).sort((a, b) => a.date.localeCompare(b.date));
+  if (own.length === 0) return [{ date: sub.startDate, price: sub.price }];
+  const start = sub.startDate < own[0].date ? sub.startDate : own[0].date;
+  return [{ date: start, price: own[0].oldPrice }, ...own.map((c) => ({ date: c.date, price: c.newPrice }))];
+}
+
+/** The most recent price change of a subscription, if any. */
+export function latestPriceChange(subId: string, changes: PriceChange[]): PriceChange | undefined {
+  return changes.filter((c) => c.subscriptionId === subId).sort((a, b) => b.date.localeCompare(a.date))[0];
 }
