@@ -1,0 +1,88 @@
+[
+  {
+    "id": "o1",
+    "title": "TuneBox Student",
+    "description": "The full TuneBox catalogue at a student price, verified once a year.",
+    "matchesCategory": "music",
+    "matchesServiceId": "tunebox",
+    "monthlyPrice": 5.99,
+    "sponsored": true
+  },
+  {
+    "id": "o2",
+    "title": "StreamFlix Basic with ads",
+    "description": "The same films and series in HD with short ad breaks.",
+    "matchesCategory": "streaming",
+    "matchesServiceId": "streamflix",
+    "monthlyPrice": 6.99,
+    "sponsored": false
+  },
+  {
+    "id": "o3",
+    "title": "FitZone Flex, no minimum term",
+    "description": "Off-peak access to every FitZone studio, cancel monthly.",
+    "matchesCategory": "fitness",
+    "matchesServiceId": "fitzone",
+    "monthlyPrice": 24.9,
+    "sponsored": true
+  },
+  {
+    "id": "o4",
+    "title": "KickPass Season Pass",
+    "description": "Every match of the season, paid as a cheaper monthly pass.",
+    "matchesCategory": "sports",
+    "matchesServiceId": "kickpass",
+    "monthlyPrice": 14.99,
+    "sponsored": true
+  },
+  {
+    "id": "o5",
+    "title": "DailyLedger Digital Lite",
+    "description": "Ten premium articles a month plus the daily briefing.",
+    "matchesCategory": "news",
+    "matchesServiceId": "dailyledger",
+    "monthlyPrice": 4.99,
+    "sponsored": false
+  },
+  {
+    "id": "o6",
+    "title": "CloudVault 50 GB",
+    "description": "A smaller storage plan that fits most phones and photo libraries.",
+    "matchesCategory": "cloud",
+    "matchesServiceId": "cloudvault",
+    "monthlyPrice": 0.99,
+    "sponsored": true
+  },
+  {
+    "id": "o7",
+    "title": "PlayVault Family",
+    "description": "A shared game library for up to five players in one household.",
+    "matchesCategory": "gaming",
+    "monthlyPrice": 12.99,
+    "sponsored": true
+  },
+  {
+    "id": "o8",
+    "title": "GoalView Weekend",
+    "description": "Live weekend matches and highlights, without the weekday extras.",
+    "matchesCategory": "sports",
+    "monthlyPrice": 9.99,
+    "sponsored": true
+  },
+  {
+    "id": "o9",
+    "title": "SnackBox Lite",
+    "description": "Two meal kits a month instead of four, with free delivery.",
+    "matchesCategory": "food",
+    "monthlyPrice": 14.9,
+    "sponsored": true
+  },
+  {
+    "id": "o10",
+    "title": "PodPal Premium",
+    "description": "Ad-free podcasts and audiobooks with offline listening.",
+    "matchesCategory": "music",
+    "monthlyPrice": 6.49,
+    "sponsored": true
+  }
+]

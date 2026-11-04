@@ -1,0 +1,222 @@
+[
+  {
+    "id": "streamflix",
+    "name": "StreamFlix",
+    "category": "streaming",
+    "defaultPrice": 13.99,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 0,
+    "providerAddress": "Filmallee 4, 10178 Berlin",
+    "providerEmail": "cancel@streamflix.example",
+    "cancelUrl": "https://streamflix.example/cancel"
+  },
+  {
+    "id": "cinemaxplus",
+    "name": "CineMax+",
+    "category": "streaming",
+    "defaultPrice": 8.99,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 0,
+    "providerAddress": "Kinoweg 18, 80331 München",
+    "providerEmail": "cancel@cinemaxplus.example",
+    "cancelUrl": "https://cinemaxplus.example/cancel"
+  },
+  {
+    "id": "moviemax",
+    "name": "MovieMax",
+    "category": "streaming",
+    "defaultPrice": 8.99,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 0,
+    "providerAddress": "Leinwandstraße 7, 50667 Köln",
+    "providerEmail": "cancel@moviemax.example",
+    "cancelUrl": "https://moviemax.example/cancel"
+  },
+  {
+    "id": "tunebox",
+    "name": "TuneBox",
+    "category": "music",
+    "defaultPrice": 11.99,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 0,
+    "providerAddress": "Klangstraße 22, 20095 Hamburg",
+    "providerEmail": "cancel@tunebox.example",
+    "cancelUrl": "https://tunebox.example/cancel"
+  },
+  {
+    "id": "wavemusic",
+    "name": "WaveMusic",
+    "category": "music",
+    "defaultPrice": 10.99,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 0,
+    "providerAddress": "Wellenweg 3, 04109 Leipzig",
+    "providerEmail": "cancel@wavemusic.example",
+    "cancelUrl": "https://wavemusic.example/cancel"
+  },
+  {
+    "id": "podpal",
+    "name": "PodPal",
+    "category": "music",
+    "defaultPrice": 4.99,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 0,
+    "providerAddress": "Hörplatz 11, 01067 Dresden",
+    "providerEmail": "cancel@podpal.example",
+    "cancelUrl": "https://podpal.example/cancel"
+  },
+  {
+    "id": "fitzone",
+    "name": "FitZone",
+    "category": "fitness",
+    "defaultPrice": 39.9,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 90,
+    "providerAddress": "Sportpark 5, 10115 Berlin",
+    "providerEmail": "cancel@fitzone.example",
+    "cancelUrl": "https://fitzone.example/cancel"
+  },
+  {
+    "id": "yogaloft",
+    "name": "YogaLoft",
+    "category": "fitness",
+    "defaultPrice": 49,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 30,
+    "providerAddress": "Ruhegasse 9, 60311 Frankfurt am Main",
+    "providerEmail": "cancel@yogaloft.example",
+    "cancelUrl": "https://yogaloft.example/cancel"
+  },
+  {
+    "id": "kickpass",
+    "name": "KickPass",
+    "category": "sports",
+    "defaultPrice": 19.99,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 30,
+    "providerAddress": "Stadionring 1, 44135 Dortmund",
+    "providerEmail": "cancel@kickpass.example",
+    "cancelUrl": "https://kickpass.example/cancel"
+  },
+  {
+    "id": "goalview",
+    "name": "GoalView",
+    "category": "sports",
+    "defaultPrice": 29.99,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 30,
+    "providerAddress": "Torweg 14, 70173 Stuttgart",
+    "providerEmail": "cancel@goalview.example",
+    "cancelUrl": "https://goalview.example/cancel"
+  },
+  {
+    "id": "cloudvault",
+    "name": "CloudVault",
+    "category": "cloud",
+    "defaultPrice": 2.99,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 0,
+    "providerAddress": "Speicherstraße 30, 28195 Bremen",
+    "providerEmail": "cancel@cloudvault.example",
+    "cancelUrl": "https://cloudvault.example/cancel"
+  },
+  {
+    "id": "pixeledit",
+    "name": "PixelEdit",
+    "category": "software",
+    "defaultPrice": 59.99,
+    "billingCycle": "yearly",
+    "noticePeriodDays": 0,
+    "providerAddress": "Bildweg 6, 90402 Nürnberg",
+    "providerEmail": "cancel@pixeledit.example",
+    "cancelUrl": "https://pixeledit.example/cancel"
+  },
+  {
+    "id": "docspro",
+    "name": "DocsPro",
+    "category": "software",
+    "defaultPrice": 6.99,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 0,
+    "providerAddress": "Papierallee 12, 30159 Hannover",
+    "providerEmail": "cancel@docspro.example",
+    "cancelUrl": "https://docspro.example/cancel"
+  },
+  {
+    "id": "vpnshield",
+    "name": "VPNShield",
+    "category": "software",
+    "defaultPrice": 4.99,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 0,
+    "providerAddress": "Tunnelstraße 8, 40213 Düsseldorf",
+    "providerEmail": "cancel@vpnshield.example",
+    "cancelUrl": "https://vpnshield.example/cancel"
+  },
+  {
+    "id": "lingoleap",
+    "name": "LingoLeap",
+    "category": "other",
+    "defaultPrice": 7.99,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 0,
+    "providerAddress": "Sprachgasse 2, 69117 Heidelberg",
+    "providerEmail": "cancel@lingoleap.example",
+    "cancelUrl": "https://lingoleap.example/cancel"
+  },
+  {
+    "id": "dailyledger",
+    "name": "DailyLedger",
+    "category": "news",
+    "defaultPrice": 9.99,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 0,
+    "providerAddress": "Pressestraße 15, 20354 Hamburg",
+    "providerEmail": "cancel@dailyledger.example",
+    "cancelUrl": "https://dailyledger.example/cancel"
+  },
+  {
+    "id": "brightpages",
+    "name": "BrightPages",
+    "category": "news",
+    "defaultPrice": 9.99,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 0,
+    "providerAddress": "Leseweg 21, 79098 Freiburg",
+    "providerEmail": "cancel@brightpages.example",
+    "cancelUrl": "https://brightpages.example/cancel"
+  },
+  {
+    "id": "gemsclub",
+    "name": "GemsClub",
+    "category": "gaming",
+    "defaultPrice": 4.99,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 0,
+    "providerAddress": "Spielplatz 3, 53111 Bonn",
+    "providerEmail": "cancel@gemsclub.example",
+    "cancelUrl": "https://gemsclub.example/cancel"
+  },
+  {
+    "id": "playvault",
+    "name": "PlayVault",
+    "category": "gaming",
+    "defaultPrice": 12.99,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 0,
+    "providerAddress": "Konsolenring 10, 76133 Karlsruhe",
+    "providerEmail": "cancel@playvault.example",
+    "cancelUrl": "https://playvault.example/cancel"
+  },
+  {
+    "id": "snackbox",
+    "name": "SnackBox",
+    "category": "food",
+    "defaultPrice": 24.9,
+    "billingCycle": "monthly",
+    "noticePeriodDays": 14,
+    "providerAddress": "Küchenstraße 17, 48143 Münster",
+    "providerEmail": "cancel@snackbox.example",
+    "cancelUrl": "https://snackbox.example/cancel"
+  }
+]
