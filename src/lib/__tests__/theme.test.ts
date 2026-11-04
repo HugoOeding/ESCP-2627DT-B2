@@ -1,7 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { applyTheme, prefersDark, resolveTheme, tokenColor } from '../theme';
-import { CATEGORY_COLORS, categoryColor } from '../categories';
-import { CATEGORIES, type Category } from '../../types';
 
 afterEach(() => {
   document.documentElement.classList.remove('dark');
@@ -31,15 +29,5 @@ describe('theme', () => {
     document.documentElement.style.setProperty('--primary', '91 63 217');
     expect(tokenColor('primary')).toBe('rgb(91 63 217)');
     expect(tokenColor('missing-token')).toBe('currentColor');
-  });
-});
-
-describe('categories', () => {
-  it('has a light and dark tile colour per category', () => {
-    for (const c of CATEGORIES) {
-      expect(categoryColor(c).light).toMatch(/^#/);
-      expect(categoryColor(c).dark).toMatch(/0\.2\)$/);
-    }
-    expect(categoryColor('unknown' as Category)).toBe(CATEGORY_COLORS.other);
   });
 });

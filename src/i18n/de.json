@@ -136,7 +136,6 @@
   "import.success_one": "{count} neues Abo gefunden",
   "import.success_other": "{count} neue Abos gefunden",
   "import.errorCsv": "Wir konnten diese Datei nicht lesen. Versuch es mit einem CSV-Export deiner Bank.",
-  "import.errorSize": "Diese Datei ist größer als 2 MB. Versuch einen kürzeren Zeitraum.",
   "import.reading": "Datei wird gelesen …",
   "detected.meta": "{amount} · {cycle} · {count}×",
   "edit.titleAdd": "Abo hinzufügen",

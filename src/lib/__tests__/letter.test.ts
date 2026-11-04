@@ -104,8 +104,9 @@ describe('buildMailto', () => {
 
 describe('letterFileName', () => {
   it('names the download per language', () => {
-    expect(letterFileName(sub('FitZone'), TODAY, 'en')).toBe('cancellation-fitzone-2026-11-20.txt');
-    expect(letterFileName(sub('FitZone'), TODAY, 'de')).toBe('Kündigung-fitzone-2026-11-20.txt');
+    expect(letterFileName(sub('FitZone'), TODAY, 'en')).toBe('cancellation-FitZone-2026-11-20.txt');
+    expect(letterFileName(sub('FitZone'), TODAY, 'de')).toBe('Kündigung-FitZone-2026-11-20.txt');
+    expect(letterFileName({ ...sub('FitZone'), name: 'CineMax+ Süd' }, TODAY, 'de')).toBe('Kündigung-CineMax-Süd-2026-11-20.txt');
     expect(letterFileName({ ...sub('FitZone'), name: '+++' }, TODAY, 'en')).toBe('cancellation-subscription-2026-11-20.txt');
   });
 });

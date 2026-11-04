@@ -136,7 +136,6 @@
   "import.success_one": "{count} new subscription found",
   "import.success_other": "{count} new subscriptions found",
   "import.errorCsv": "We couldn't read this file. Try a CSV export from your bank.",
-  "import.errorSize": "This file is larger than 2 MB. Try a shorter date range.",
   "import.reading": "Reading file…",
   "detected.meta": "{amount} · {cycle} · {count}×",
   "edit.titleAdd": "Add subscription",

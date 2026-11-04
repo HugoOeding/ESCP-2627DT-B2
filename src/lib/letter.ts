@@ -48,8 +48,8 @@ export function buildMailto(sub: Subscription, letter: Letter): string | null {
   return `mailto:${sub.providerEmail}?subject=${encodeURIComponent(letter.subject)}&body=${encodeURIComponent(letter.text)}`;
 }
 
-/** File name for the download: `cancellation-fitzone-2026-11-20.txt` / `Kündigung-fitzone-2026-11-20.txt`. */
+/** File name for the download: `cancellation-FitZone-2026-11-20.txt` / `Kündigung-FitZone-2026-11-20.txt`. */
 export function letterFileName(sub: Subscription, todayISO: string, lang: Language): string {
-  const slug = sub.name.toLowerCase().replace(/[^a-z0-9äöüß]+/g, '-').replace(/^-|-$/g, '') || 'subscription';
+  const slug = sub.name.replace(/[^A-Za-z0-9ÄÖÜäöüß]+/g, '-').replace(/^-|-$/g, '') || 'subscription';
   return `${lang === 'de' ? 'Kündigung' : 'cancellation'}-${slug}-${todayISO}.txt`;
 }

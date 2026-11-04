@@ -30,7 +30,7 @@ export function SummaryCard({ monthlyTotal, yearlyTotal, count, savedPerMonth = 
         <span data-testid="sub-count">{t('summary.count', { count })}</span>
       </p>
       {savedPerMonth > 0 && (
-        <p className="mt-2 flex items-center gap-1 text-label text-success tabular-nums">
+        <p className="mt-2 flex items-center gap-1 text-label text-text-muted tabular-nums">
           <PiggyBank {...ICON_SM} />
           {t('summary.saved', { amount: money(savedPerMonth, lang) })}
         </p>

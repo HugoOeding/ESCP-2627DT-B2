@@ -175,7 +175,7 @@ describe('S1.1 statement import', () => {
     const big = new File(['x'], 'big.csv', { type: 'text/csv' });
     Object.defineProperty(big, 'size', { value: 3 * 1024 * 1024 });
     await user.upload(screen.getByLabelText('Choose CSV file'), big);
-    expect(screen.getByRole('alert')).toHaveTextContent('larger than 2 MB');
+    expect(screen.getByRole('alert')).toHaveTextContent("We couldn't read this file. Try a CSV export from your bank.");
     await user.click(screen.getByRole('button', { name: 'Close' }));
     await user.click(screen.getByRole('button', { name: 'Import bank statement' }));
     expect(screen.queryByRole('alert')).toBeNull();
@@ -264,7 +264,7 @@ describe('S2 add and edit', () => {
     await user.click(within(dialog).getByRole('button', { name: 'Print' }));
     expect(print).toHaveBeenCalled();
     const anchorClick = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(function (this: HTMLAnchorElement) {
-      expect(this.download).toBe('cancellation-fitzone-2026-11-20.txt');
+      expect(this.download).toBe('cancellation-FitZone-2026-11-20.txt');
     });
     await user.click(within(dialog).getByRole('button', { name: 'Download' }));
     expect(createObjectURL).toHaveBeenCalled();

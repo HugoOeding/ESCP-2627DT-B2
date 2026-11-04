@@ -31,7 +31,7 @@ import {
 } from '../lib/calculations';
 import { cn } from '../lib/cn';
 import { countWord, money } from '../lib/format';
-import { StatementError, assertFileSize, detectRecurring, parseAmount, parseCsv } from '../lib/statementParser';
+import { assertFileSize, detectRecurring, parseAmount, parseCsv } from '../lib/statementParser';
 import { priceToString } from '../lib/subscriptionForm';
 import type { Tip } from '../lib/tips';
 import { catalogue, useStore } from '../store/useStore';
@@ -158,9 +158,10 @@ function StatementImport({ open, onClose }: { open: boolean; onClose: () => void
     onClose();
   };
 
-  const fail = (e: unknown) => {
+  /** Unreadable or oversized files get the same copy (design.md §7); the hint states the 2 MB limit. */
+  const fail = () => {
     setDetected(null);
-    setError(t(e instanceof StatementError && e.code === 'tooLarge' ? 'import.errorSize' : 'import.errorCsv'));
+    setError(t('import.errorCsv'));
   };
 
   /** The text and its transactions live only inside this call; only the detections are kept. */
@@ -171,8 +172,8 @@ function StatementImport({ open, onClose }: { open: boolean; onClose: () => void
       const found = detectRecurring(parseCsv(await load()), subscriptions, catalogue);
       setDetected(found);
       setSelected(new Set(found.filter((d) => !d.alreadyTracked).map((d) => d.key)));
-    } catch (e) {
-      fail(e);
+    } catch {
+      fail();
     } finally {
       setLoading(false);
       if (fileRef.current) fileRef.current.value = '';
@@ -184,8 +185,8 @@ function StatementImport({ open, onClose }: { open: boolean; onClose: () => void
     if (!file) return;
     try {
       assertFileSize(file.size);
-    } catch (err) {
-      fail(err);
+    } catch {
+      fail();
       e.target.value = '';
       return;
     }

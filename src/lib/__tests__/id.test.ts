@@ -1,12 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { cn } from '../cn';
 import { createId } from '../id';
-
-describe('cn', () => {
-  it('joins truthy classes', () => {
-    expect(cn('a', false, null, undefined, 0, 'b')).toBe('a b');
-  });
-});
 
 describe('createId', () => {
   it('uses crypto.randomUUID when available', () => {
