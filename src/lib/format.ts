@@ -48,3 +48,10 @@ export function cycleLabel(cycle: BillingCycle, t: Translate): string {
 export function pricePerCycle(price: number, cycle: BillingCycle, lang: Language, t: Translate): string {
   return t(cycle === 'monthly' ? 'price.perMonth' : 'price.perYear', { amount: money(price, lang) });
 }
+
+/** "two", "three" … via i18n for small counts; digits otherwise. */
+export function countWord(n: number, t: Translate): string {
+  const key = `number.${n}`;
+  const word = t(key);
+  return word === key ? String(n) : word;
+}

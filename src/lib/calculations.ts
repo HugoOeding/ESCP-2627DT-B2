@@ -141,3 +141,16 @@ export function priceHistory(sub: Subscription, changes: PriceChange[]): PricePo
 export function latestPriceChange(subId: string, changes: PriceChange[]): PriceChange | undefined {
   return changes.filter((c) => c.subscriptionId === subId).sort((a, b) => b.date.localeCompare(a.date))[0];
 }
+
+/** The latest price change if it happened within the last `days` days (default 30, as for alerts). */
+export function recentPriceChange(
+  subId: string,
+  changes: PriceChange[],
+  todayISO: string,
+  days = 30,
+): PriceChange | undefined {
+  const latest = latestPriceChange(subId, changes);
+  if (!latest) return undefined;
+  const ago = Math.round((Date.parse(todayISO) - Date.parse(latest.date)) / 86_400_000);
+  return ago >= 0 && ago <= days ? latest : undefined;
+}

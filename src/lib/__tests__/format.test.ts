@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { cycleLabel, date, money, percent, pricePerCycle } from '../format';
+import { countWord, cycleLabel, date, money, percent, pricePerCycle } from '../format';
 import { makeT } from '../../i18n/t';
 
 describe('format', () => {
@@ -26,5 +26,13 @@ describe('format', () => {
     expect(cycleLabel('yearly', makeT('de'))).toBe('Jährlich');
     expect(pricePerCycle(13.99, 'monthly', 'en', t)).toBe('€13.99/month');
     expect(pricePerCycle(59.99, 'yearly', 'de', makeT('de'))).toBe('59,99 €/Jahr');
+  });
+});
+
+describe('countWord', () => {
+  it('spells small counts and falls back to digits', () => {
+    expect(countWord(2, makeT('en'))).toBe('two');
+    expect(countWord(3, makeT('de'))).toBe('drei');
+    expect(countWord(12, makeT('en'))).toBe('12');
   });
 });

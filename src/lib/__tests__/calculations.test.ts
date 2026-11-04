@@ -9,6 +9,7 @@ import {
   hasBudget,
   isCounted,
   latestPriceChange,
+  recentPriceChange,
   priceHistory,
   monthlyEquivalent,
   savedPerMonth,
@@ -119,5 +120,14 @@ describe('priceHistory', () => {
     expect(latestPriceChange('sub-4', seedData.priceChanges)).toBeUndefined();
     const early = [{ id: 'x', subscriptionId: tune.id, oldPrice: 8, newPrice: 9, date: '2024-01-01' }];
     expect(priceHistory(tune, early)[0]).toEqual({ date: '2024-01-01', price: 8 });
+  });
+});
+
+describe('recentPriceChange', () => {
+  it('only returns changes from the last 30 days', () => {
+    expect(recentPriceChange('sub-2', seedData.priceChanges, TODAY)?.newPrice).toBe(11.99);
+    expect(recentPriceChange('sub-2', seedData.priceChanges, '2026-12-05')).toBeUndefined();
+    expect(recentPriceChange('sub-2', seedData.priceChanges, '2026-10-01')).toBeUndefined();
+    expect(recentPriceChange('sub-4', seedData.priceChanges, TODAY)).toBeUndefined();
   });
 });
