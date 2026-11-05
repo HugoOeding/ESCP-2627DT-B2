@@ -1,0 +1,226 @@
+{
+  "profile": {
+    "name": "Lena Weber",
+    "address": "Musterstraße 12, 10115 Berlin",
+    "email": "lena.weber@example.com",
+    "language": "en",
+    "theme": "system"
+  },
+  "settings": {
+    "reminderDaysBefore": 3,
+    "yearlyReminderDays": 30,
+    "demoDate": "2026-11-20"
+  },
+  "budget": {
+    "monthlyLimit": 130
+  },
+  "familyMembers": [
+    {
+      "id": "me",
+      "name": "Me"
+    },
+    {
+      "id": "max",
+      "name": "Max"
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": "sub-1",
+      "serviceId": "streamflix",
+      "name": "StreamFlix",
+      "category": "streaming",
+      "price": 13.99,
+      "billingCycle": "monthly",
+      "startDate": "2025-03-12",
+      "status": "active",
+      "noticePeriodDays": 0,
+      "providerName": "StreamFlix",
+      "providerAddress": "Filmallee 4, 10178 Berlin",
+      "providerEmail": "cancel@streamflix.example",
+      "cancelUrl": "https://streamflix.example/cancel",
+      "source": "manual",
+      "customerNumber": "KD-48213",
+      "sharedPlanId": "plan-streamflix"
+    },
+    {
+      "id": "sub-2",
+      "serviceId": "tunebox",
+      "name": "TuneBox",
+      "category": "music",
+      "price": 11.99,
+      "billingCycle": "monthly",
+      "startDate": "2024-09-05",
+      "status": "active",
+      "noticePeriodDays": 0,
+      "providerName": "TuneBox",
+      "providerAddress": "Klangstraße 22, 20095 Hamburg",
+      "providerEmail": "cancel@tunebox.example",
+      "cancelUrl": "https://tunebox.example/cancel",
+      "source": "manual",
+      "customerNumber": "KD-31907"
+    },
+    {
+      "id": "sub-3",
+      "serviceId": "wavemusic",
+      "name": "WaveMusic",
+      "category": "music",
+      "price": 10.99,
+      "billingCycle": "monthly",
+      "startDate": "2025-06-24",
+      "status": "active",
+      "noticePeriodDays": 0,
+      "providerName": "WaveMusic",
+      "providerAddress": "Wellenweg 3, 04109 Leipzig",
+      "providerEmail": "cancel@wavemusic.example",
+      "cancelUrl": "https://wavemusic.example/cancel",
+      "source": "manual",
+      "customerNumber": "KD-55120"
+    },
+    {
+      "id": "sub-4",
+      "serviceId": "fitzone",
+      "name": "FitZone",
+      "category": "fitness",
+      "price": 39.9,
+      "billingCycle": "monthly",
+      "startDate": "2025-03-01",
+      "status": "active",
+      "noticePeriodDays": 90,
+      "providerName": "FitZone",
+      "providerAddress": "Sportpark 5, 10115 Berlin",
+      "providerEmail": "cancel@fitzone.example",
+      "cancelUrl": "https://fitzone.example/cancel",
+      "source": "manual",
+      "minimumTermEnd": "2027-02-28",
+      "customerNumber": "KD-20488"
+    },
+    {
+      "id": "sub-5",
+      "serviceId": "cloudvault",
+      "name": "CloudVault",
+      "category": "cloud",
+      "price": 2.99,
+      "billingCycle": "monthly",
+      "startDate": "2026-11-08",
+      "status": "trial",
+      "noticePeriodDays": 0,
+      "providerName": "CloudVault",
+      "providerAddress": "Speicherstraße 30, 28195 Bremen",
+      "providerEmail": "cancel@cloudvault.example",
+      "cancelUrl": "https://cloudvault.example/cancel",
+      "source": "manual",
+      "trialEndDate": "2026-11-22",
+      "priceAfterTrial": 2.99,
+      "customerNumber": "KD-77302"
+    },
+    {
+      "id": "sub-6",
+      "serviceId": "pixeledit",
+      "name": "PixelEdit",
+      "category": "software",
+      "price": 59.99,
+      "billingCycle": "yearly",
+      "startDate": "2025-12-10",
+      "status": "active",
+      "noticePeriodDays": 0,
+      "providerName": "PixelEdit",
+      "providerAddress": "Bildweg 6, 90402 Nürnberg",
+      "providerEmail": "cancel@pixeledit.example",
+      "cancelUrl": "https://pixeledit.example/cancel",
+      "source": "manual",
+      "customerNumber": "KD-63015"
+    },
+    {
+      "id": "sub-7",
+      "serviceId": "kickpass",
+      "name": "KickPass",
+      "category": "sports",
+      "price": 19.99,
+      "billingCycle": "monthly",
+      "startDate": "2025-08-15",
+      "status": "active",
+      "noticePeriodDays": 30,
+      "providerName": "KickPass",
+      "providerAddress": "Stadionring 1, 44135 Dortmund",
+      "providerEmail": "cancel@kickpass.example",
+      "cancelUrl": "https://kickpass.example/cancel",
+      "source": "manual",
+      "customerNumber": "KD-41876"
+    },
+    {
+      "id": "sub-8",
+      "serviceId": "dailyledger",
+      "name": "DailyLedger",
+      "category": "news",
+      "price": 9.99,
+      "billingCycle": "monthly",
+      "startDate": "2025-01-22",
+      "status": "active",
+      "noticePeriodDays": 0,
+      "providerName": "DailyLedger",
+      "providerAddress": "Pressestraße 15, 20354 Hamburg",
+      "providerEmail": "cancel@dailyledger.example",
+      "cancelUrl": "https://dailyledger.example/cancel",
+      "source": "manual",
+      "customerNumber": "KD-90344"
+    },
+    {
+      "id": "sub-9",
+      "serviceId": "gemsclub",
+      "name": "GemsClub",
+      "category": "gaming",
+      "price": 4.99,
+      "billingCycle": "monthly",
+      "startDate": "2026-05-03",
+      "status": "active",
+      "noticePeriodDays": 0,
+      "providerName": "GemsClub",
+      "providerAddress": "Spielplatz 3, 53111 Bonn",
+      "providerEmail": "cancel@gemsclub.example",
+      "cancelUrl": "https://gemsclub.example/cancel",
+      "source": "manual",
+      "assignedTo": "max",
+      "customerNumber": "KD-12659"
+    }
+  ],
+  "priceChanges": [
+    {
+      "id": "pc-1",
+      "subscriptionId": "sub-2",
+      "oldPrice": 9.99,
+      "newPrice": 10.99,
+      "date": "2025-09-05"
+    },
+    {
+      "id": "pc-2",
+      "subscriptionId": "sub-2",
+      "oldPrice": 10.99,
+      "newPrice": 11.99,
+      "date": "2026-11-01"
+    }
+  ],
+  "sharedPlans": [
+    {
+      "id": "plan-streamflix",
+      "subscriptionId": "sub-1",
+      "members": [
+        {
+          "name": "Lena",
+          "share": 4.67,
+          "paid": true
+        },
+        {
+          "name": "Mia",
+          "share": 4.66,
+          "paid": true
+        },
+        {
+          "name": "Jonas",
+          "share": 4.66,
+          "paid": false
+        }
+      ]
+    }
+  ]
+}

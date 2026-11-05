@@ -1,0 +1,60 @@
+import type { Config } from 'tailwindcss';
+
+export default {
+  darkMode: 'class',
+  content: ['./index.html', './src/**/*.{ts,tsx}', './.storybook/**/*.{ts,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        bg: 'rgb(var(--bg) / <alpha-value>)',
+        surface: 'rgb(var(--surface) / <alpha-value>)',
+        'surface-muted': 'rgb(var(--surface-muted) / <alpha-value>)',
+        border: 'rgb(var(--border) / <alpha-value>)',
+        text: 'rgb(var(--text) / <alpha-value>)',
+        'text-muted': 'rgb(var(--text-muted) / <alpha-value>)',
+        primary: 'rgb(var(--primary) / <alpha-value>)',
+        'primary-soft': 'rgb(var(--primary-soft) / <alpha-value>)',
+        'on-primary': 'rgb(var(--on-primary) / <alpha-value>)',
+        success: 'rgb(var(--success) / <alpha-value>)',
+        'success-soft': 'rgb(var(--success-soft) / <alpha-value>)',
+        warning: 'rgb(var(--warning) / <alpha-value>)',
+        'warning-soft': 'rgb(var(--warning-soft) / <alpha-value>)',
+        danger: 'rgb(var(--danger) / <alpha-value>)',
+        'danger-soft': 'rgb(var(--danger-soft) / <alpha-value>)',
+        sponsored: 'rgb(var(--sponsored) / <alpha-value>)',
+        paper: 'rgb(var(--paper) / <alpha-value>)',
+        ink: 'rgb(var(--ink) / <alpha-value>)',
+      },
+      fontSize: {
+        display: ['2rem', { lineHeight: '2.5rem', fontWeight: '700' }],
+        title: ['1.375rem', { lineHeight: '1.75rem', fontWeight: '700' }],
+        heading: ['1.0625rem', { lineHeight: '1.5rem', fontWeight: '600' }],
+        body: ['0.9375rem', { lineHeight: '1.375rem' }],
+        label: ['0.8125rem', { lineHeight: '1.125rem', fontWeight: '500' }],
+        caption: ['0.75rem', { lineHeight: '1rem' }],
+      },
+      borderRadius: { sm: '8px', md: '12px', lg: '20px', full: '9999px' },
+      boxShadow: { overlay: '0 -8px 24px rgba(0,0,0,0.12)' },
+      spacing: {
+        'space-1': '4px',
+        'space-2': '8px',
+        'space-3': '12px',
+        'space-4': '16px',
+        'space-5': '20px',
+        'space-6': '24px',
+        'space-7': '32px',
+        'space-8': '40px',
+      },
+      transitionTimingFunction: { standard: 'cubic-bezier(0.2, 0, 0, 1)' },
+      transitionDuration: { fast: '120ms', base: '200ms', slow: '300ms' },
+      keyframes: {
+        'slide-up': { from: { transform: 'translateY(100%)' }, to: { transform: 'translateY(0)' } },
+        'fade-in': { from: { opacity: '0' }, to: { opacity: '1' } },
+      },
+      animation: {
+        'slide-up': 'slide-up 200ms cubic-bezier(0.2, 0, 0, 1)',
+        'fade-in': 'fade-in 200ms cubic-bezier(0.2, 0, 0, 1)',
+      },
+    },
+  },
+} satisfies Config;
